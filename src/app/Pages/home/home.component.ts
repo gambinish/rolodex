@@ -46,8 +46,6 @@ export class HomeComponent implements OnInit {
       })
   }
 
-
-
   searchByName(event: string) {
 
     let result = []
