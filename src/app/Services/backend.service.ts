@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class BackendService {
-  baseUrl: string = 'https://swapi.co/api/';
+  // baseUrl: string = 'https://swapi.co/api/';
+  // baseUrl: string = 'localhost:8000'
 
   characters: any[] = [];
 
@@ -13,7 +14,9 @@ export class BackendService {
 
   // getCharacter(id: number) {
   getCharacter() {
-    const url = this.baseUrl + 'people/';
+    // const url = this.baseUrl + 'people/';
+    const url = 'http://localhost:8000' + '/users'
+    console.log(url)
     return this.http.get(url).toPromise();
   }
 

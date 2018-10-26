@@ -37,8 +37,12 @@ export class HomeComponent implements OnInit {
 
     this.backend.getCharacter()
       .then((data) => {
-        this.render = data.results
+        console.log('data:', data)
+        this.render = data;
         console.log('this.render', this.render)
+      })
+      .catch(err => {
+        console.log(err)
       })
   }
 
