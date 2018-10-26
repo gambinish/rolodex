@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../../Services/backend.service';
+import { WrappedNodeExpr } from '@angular/compiler';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +13,10 @@ export class HomeComponent implements OnInit {
 
   formData: {
     name: string,
+    isSelected: boolean
   } = {
-      name: ''
+      name: '',
+      isSelected: false
     }
 
   sanityCheck: string = 'sanityCheck'
@@ -34,9 +37,37 @@ export class HomeComponent implements OnInit {
 
     this.backend.getCharacter()
       .then((data) => {
-        this.render = data.results;
-        console.log(this.render)
+        this.render = data.results
+        console.log('this.render', this.render)
       })
+  }
+
+  searchByName() {
+
+    let result = []
+
+    let input = this.formData.name.toString().toUpperCase()
+    console.log(input)
+
+    this.render.forEach(element => {
+      let target = element.name.toString().toUpperCase()
+      if (!target.includes(input)) {
+        console.log('NO MATCH')
+      } else {
+        console.log('MATCH')
+        result.push(element)
+      };
+    })
+    console.log('result: ', result)
+    this.render = result;
+
+    // let input = this.formData.name.toString()
+    // console.log('input: ', input)
+
+
+    // console.log(`input "${input}" ${target.includes(input) ? `${target}` : 'NO MATCH'} in the sentence`);
+    // expected output: "The word "fox" is in the sentence"
+
   }
 
 }
