@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from '../../Services/backend.service';
 
 @Component({
   selector: 'app-home',
@@ -7,19 +8,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  title: string = 'This is a Title String';
-  subtitle: string;
-  data: {
-    header: string
-  } = {
-      header: 'this is a title header'
-    };
+  title: string = 'Search for Contact'
 
-  constructor() {
-    const subtitle: string = 'This is a substring';
+  formData: {
+    name: string,
+  } = {
+      name: ''
+    }
+
+  sanityCheck: string = 'sanityCheck'
+
+  characters: any[] = [];
+
+  render: any;
+
+  // characters: string = 'characters';
+
+  constructor(private backend: BackendService) {
+
   }
 
   ngOnInit() {
+    // simulate database call to retrieve all users
+    this.characters = this.backend.characters;
+
+    this.backend.getCharacter()
+      .then((data) => {
+        this.render = data.results;
+        console.log(this.render)
+      })
   }
 
 }

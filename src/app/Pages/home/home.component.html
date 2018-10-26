@@ -1,18 +1,27 @@
 <hr />
 <h1>
-  {{ title }}
+  <!-- {{ title }} -->
+  SEARCH FOR CONTACT
 </h1>
 <hr />
 
-<h2>
+<!-- <h2>
   {{ data.header }}
-</h2>
+</h2> -->
 
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget faucibus nulla. Lorem ipsum dolor sit amet,
-  consectetur adipiscing elit. Vivamus sit amet eleifend eros. Quisque interdum tincidunt nibh, quis bibendum leo
-  feugiat a. Proin neque nisi, aliquet eu eleifend convallis, consequat id nulla. Nulla eget lacinia neque. Vestibulum
-  erat orci, lobortis at nisi eu, molestie iaculis urna. Mauris auctor, nisi in eleifend ullamcorper, lacus magna
-  tempus sapien, quis blandit mauris sapien sit amet ex. Quisque eu nisi viverra, interdum metus eget, faucibus ligula.
-  Nulla rutrum imperdiet velit, at laoreet enim condimentum et.
+<!-- <form action=''>
+  <input type='text' name='name' placeholder='name' [(ngModel)]='formData.name' (keyup)='validateName()'>
+  <br />
+  <br />
+  <input type='text' name='email' placeholder='email' [(ngModel)]='formData.email' (keyup)='validateEmail()'>
+</form> -->
+
+<div>
+  <form action=''>
+    <input type='text' name='name' placeholder='name' [(ngModel)]='formData.name' (keyup)='searchByName()'>
+  </form>
+</div>
+
+<p *ngFor="let charCard of render">
+  {{charCard.name}}
 </p>

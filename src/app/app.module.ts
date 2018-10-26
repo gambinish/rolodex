@@ -30,7 +30,8 @@ import { MyProfileComponent } from './Pages/my-profile/my-profile.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
