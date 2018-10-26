@@ -2,14 +2,25 @@ h1 {
   padding: 2px;
 }
 
+.cardWrapper {
+  margin: auto;
+  width: 50%;
+}
+
 p {
   border: solid black 2px;
-  padding: 5px;
   background-color: bisque;
+  border-radius: 15px;
+  width: 100%;
+  margin: 5px;
+  height: 40px;
+  padding: 8px;
 }
 
 input {
-  width: 25%;
+  width: 50%;
   margin: auto;
   height: 25px;
+  text-align: center;
 }
+

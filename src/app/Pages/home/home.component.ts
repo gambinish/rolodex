@@ -42,7 +42,9 @@ export class HomeComponent implements OnInit {
       })
   }
 
-  searchByName() {
+
+
+  searchByName(event: string) {
 
     let result = []
 

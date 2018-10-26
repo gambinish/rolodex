@@ -5,26 +5,15 @@
 </h1>
 <hr />
 
-<!-- <h2>
-  {{ data.header }}
-</h2> -->
-
-<!-- <form action=''>
-  <input type='text' name='name' placeholder='name' [(ngModel)]='formData.name' (keyup)='validateName()'>
-  <br />
-  <br />
-  <input type='text' name='email' placeholder='email' [(ngModel)]='formData.email' (keyup)='validateEmail()'>
-</form> -->
-
-<div>
+<div class='cardWrapper'>
   <form action=''>
-    <input type='text' name='name' placeholder='name' [(ngModel)]='formData.name' (keyup)='searchByName()'>
+    <input type='text' name='name' placeholder='name' [(ngModel)]='formData.name' (keyup)='searchByName($event)'>
   </form>
 </div>
 
-<p *ngFor="
+<div class='cardWrapper'>
+  <p class='contactCard' *ngFor="
       let charCard of render">
-  {{charCard.name}}
-</p>
-
-<!-- (keyup)='searchByName()' -->
+    {{charCard.name}}
+  </p>
+</div>
