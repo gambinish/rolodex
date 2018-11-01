@@ -1,10 +1,10 @@
 <hr />
 <h1>
-  <!-- {{ title }} -->
   ROLODEX
 </h1>
 <hr />
 
+<!-- SEARCH BAR -->
 <div>
   <br>
   <form action=''>
@@ -13,11 +13,11 @@
   <br>
 </div>
 
+<!-- CHARACTER CARD -->
 <div class='cardWrapper'>
-  <p class='contactCard' *ngFor="
-      let charCard of render">
+  <p class='contactCard' *ngFor="let charCard of render">
     {{charCard.name}}
     <br>
-    <a routerLink="/detail">DETAIL</a>
+    <a routerLink="/users/{{charCard.id}}">DETAIL</a>
   </p>
 </div>

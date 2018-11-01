@@ -1,3 +1,16 @@
 <p>
   detail-page works!
 </p>
+
+<p>
+  {{sanityCheck}}
+</p>
+
+<!-- CHARACTER CARD -->
+<div class='cardWrapper'>
+  <p class='contactCard'>
+    {{render}}
+    <br>
+    <a routerLink="/users/{{charCard.id}}">DETAIL</a>
+  </p>
+</div>

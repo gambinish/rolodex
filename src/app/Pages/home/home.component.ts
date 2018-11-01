@@ -25,9 +25,7 @@ export class HomeComponent implements OnInit {
 
   render: any;
 
-  constructor(private backend: BackendService) {
-
-  }
+  constructor(private backend: BackendService) { }
 
   ngOnInit() {
     // simulate database call to retrieve all users
@@ -68,4 +66,5 @@ export class HomeComponent implements OnInit {
       })
 
   }
+
 }

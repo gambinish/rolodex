@@ -12,15 +12,23 @@ export class BackendService {
 
   constructor(private http: HttpClient) { }
 
-  // getCharacter(id: number) {
   getCharacter() {
-    // const url = this.baseUrl + 'people/';
+
     const url = 'http://localhost:8000' + '/users'
     console.log(url)
     return this.http.get(url).toPromise();
+
   }
 
-  addCharacter(character) {
-    this.characters.push(character[0])
+  getDetail() {
+
+    const url = 'http://localhost:8000' + '/users/:id'
+    console.log(url)
+    return this.http.get(url).toPromise();
+
   }
+
+  // addCharacter(character) {
+  //   this.characters.push(character[0])
+  // }
 }
