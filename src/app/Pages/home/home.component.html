@@ -1,19 +1,23 @@
 <hr />
 <h1>
   <!-- {{ title }} -->
-  SEARCH FOR CONTACT
+  ROLODEX
 </h1>
 <hr />
 
 <div>
+  <br>
   <form action=''>
-    <input type='text' name='name' placeholder='name' [(ngModel)]='formData.name' (keyup)='searchByName($event)'>
+    <input type='text' name='name' placeholder='search for contact' [(ngModel)]='formData.name' (keyup)='searchByName($event)'>
   </form>
+  <br>
 </div>
 
 <div class='cardWrapper'>
   <p class='contactCard' *ngFor="
       let charCard of render">
     {{charCard.name}}
+    <br>
+    <a routerLink="/detail">DETAIL</a>
   </p>
 </div>

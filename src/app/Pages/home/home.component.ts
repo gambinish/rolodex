@@ -25,8 +25,6 @@ export class HomeComponent implements OnInit {
 
   render: any;
 
-  // characters: string = 'characters';
-
   constructor(private backend: BackendService) {
 
   }
@@ -48,30 +46,26 @@ export class HomeComponent implements OnInit {
 
   searchByName(event: string) {
 
-    let result = []
+    let searchResults = []
 
     let input = this.formData.name.toString().toUpperCase()
-    console.log(input)
-
-    this.render.forEach(element => {
-      let target = element.name.toString().toUpperCase()
-      if (!target.includes(input)) {
-        console.log('NO MATCH')
-      } else {
-        console.log('MATCH')
-        result.push(element)
-      };
-    })
-    console.log('result: ', result)
-    this.render = result;
-
-    // let input = this.formData.name.toString()
-    // console.log('input: ', input)
-
-
-    // console.log(`input "${input}" ${target.includes(input) ? `${target}` : 'NO MATCH'} in the sentence`);
-    // expected output: "The word "fox" is in the sentence"
+    // simulate database call to re-render all contactCards
+    this.backend.getCharacter()
+      .then((data) => {
+        // then set this.render to the data
+        this.render = data;
+        // filter this array based on the input defined above
+        this.render = this.render.filter(element => {
+          let target = element.name.toString().toUpperCase()
+          if (target.includes(input)) {
+            searchResults.push(element)
+          }
+        })
+        this.render = searchResults;
+      })
+      .catch((err) => {
+        console.log(err)
+      })
 
   }
-
 }
