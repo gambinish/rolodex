@@ -1,0 +1,32 @@
+h1 {
+  padding: 2px;
+}
+
+.cardWrapper {
+  display: flex;
+  margin: auto;
+  // width: 50%;
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+}
+
+.contactCard {
+  border: solid black 2px;
+  background-color: bisque;
+  border-radius: 15px;
+  width: 50%;
+  margin: 5px;
+  height: 400px;
+  padding: 8px;
+  flex-flow: row wrap;
+}
+
+input {
+  width: 25%;
+  margin: auto;
+  height: 25px;
+  text-align: center;
+}
+

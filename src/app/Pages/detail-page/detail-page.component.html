@@ -1,16 +1,15 @@
-<p>
-  detail-page works!
-</p>
-
-<p>
-  {{sanityCheck}}
-</p>
-
 <!-- CHARACTER CARD -->
 <div class='cardWrapper'>
   <p class='contactCard'>
-    {{render}}
+    {{contactName}}
     <br>
-    <a routerLink="/users/{{charCard.id}}">DETAIL</a>
+    {{contactEmail}}
+    <br>
+    <a href="https://placeholder.com">
+      <img src="https://via.placeholder.com/300"></a>
+    <br>
+    <a routerLink="/users" id="backButton">BACK</a>
+    <br>
+    <a href="https://www.skype.com/en/">Click to call {{contactName}}</a>
   </p>
 </div>

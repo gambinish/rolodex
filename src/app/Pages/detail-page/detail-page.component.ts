@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../../Services/backend.service';
+// import { LocationStrategy } from '@angular/common';
+import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @Component({
   selector: 'app-detail-page',
   templateUrl: './detail-page.component.html',
-  styleUrls: ['./detail-page.component.scss']
+  styleUrls: ['./detail-page.component.scss'],
+  providers: [Location, { provide: LocationStrategy, useClass: PathLocationStrategy }]
 })
 export class DetailPageComponent implements OnInit {
 
@@ -14,23 +17,15 @@ export class DetailPageComponent implements OnInit {
 
   render: any;
 
-  constructor(private backend: BackendService) { }
+  contactName: string;
 
-  // ngOnInit() {
-  //   // simulate database call to retrieve all users
-  //   this.characters = this.backend.characters;
-  //   // console.log(this.characters)
+  contactEmail: string;
 
-  //   this.backend.getDetail()
-  //     .then((data) => {
-  //       console.log('data:', data)
-  //       this.render = data;
-  //       console.log('this.render', this.render)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     })
-  // }
+  test: string = 'TEST RENDER'
+
+  id: number;
+
+  constructor(private backend: BackendService, private location: Location) { }
 
   ngOnInit() {
     // simulate database call to retrieve all users
@@ -38,13 +33,17 @@ export class DetailPageComponent implements OnInit {
 
     this.backend.getCharacter()
       .then((data) => {
-        console.log('data:', data)
         this.render = data;
-        console.log('this.render', this.render)
+        // console.log(contactList)
+        this.render = this.render.filter(contact => {
+          if (`/users/${contact.id}` === this.location.path()) {
+            this.contactName = contact.name.toString();
+            this.contactEmail = contact.email.toString();
+
+          }
+        })
       })
-      .catch(err => {
-        console.log(err)
-      })
+    console.log('dynamic URL: ', this.location.path())
   }
 
 }
