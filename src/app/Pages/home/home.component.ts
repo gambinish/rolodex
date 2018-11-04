@@ -45,6 +45,8 @@ export class HomeComponent implements OnInit {
 
   searchByName(event: string) {
 
+    console.log(this.formData)
+
     let searchResults = []
 
     let input = this.formData.name.toString().toUpperCase()

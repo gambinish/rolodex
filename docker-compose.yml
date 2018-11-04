@@ -1,0 +1,5 @@
+version: '3'
+services:
+  rolodex:
+    build: .
+    image: ngambino0192/rolodex:local

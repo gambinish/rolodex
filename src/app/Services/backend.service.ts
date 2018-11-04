@@ -9,8 +9,7 @@ import { Observable } from 'rxjs';
 export class BackendService {
   // baseUrl: string = 'https://swapi.co/api/';
   baseUrl: string = 'http://localhost:8000'
-
-  // pokeApi: string = 'https://pokeapi.co/api/v2/pokemon/1'
+  // baseUrl: string = 'http://34.219.79.72:8000'
 
   characters: any[] = [];
 
@@ -30,17 +29,12 @@ export class BackendService {
   getDetail() {
 
     const url = `http://localhost:8000/users/${this.id}`;
+    // const url = this.baseUrl + `/users/${this.id}`
     // const url = `http://localhost:8000/users/8`;
-    // const url = this.baseUrl + `/users{$id}`
+    // const url = this.baseUrl + `/users{$id}` 
     console.log(url)
     return this.http.get(url).toPromise();
 
   }
-
-  // getSprite() {
-  //   const url = this.pokeApi
-  //   console.log(url)
-  //   return this.http.get(url).toPromise();
-  // }
 
 }

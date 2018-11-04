@@ -6,11 +6,23 @@ const cors = require('cors')
 app.use(bodyParser.json());
 app.use(cors())
 
-const Users = require('./_tempDB.js')
+// const Users = require('./_tempDB.js')
 
 // simualate retrieving all users from the db
+// app.get('/users', (req, res) => {
+//   res.json(Users)
+// })
+
 app.get('/users', (req, res) => {
-  res.json(Users)
+  Users
+    .fetchAll()
+    .then(items => {
+      console.log(items)
+      res.json(items.serialize())
+    })
+    .catch(err => {
+      console.log('error: ', err)
+    })
 })
 
 // simulate a request to get single contact detail page
