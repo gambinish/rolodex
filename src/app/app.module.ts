@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './Shared/header.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { DetailPageComponent } from './Pages/detail-page/detail-page.component';
+import { CreateContactComponent } from './Pages/create-contact/create-contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    DetailPageComponent
+    DetailPageComponent,
+    CreateContactComponent
   ],
   imports: [
     BrowserModule,

@@ -13,8 +13,6 @@ const PORT = process.env.EXPRESS_CONTAINER_PORT || 8000
 
 const Contacts = require('./db/models/contacts.js')
 
-
-
 // const Users = require('./_tempDB.js')
 
 app.get('/users', (req, res) => {
@@ -48,8 +46,6 @@ app.get('/users/:id', (req, res) => {
     .catch(err => {
       console.log('error: ', err)
     })
-
-
 
   // Users.filter(contact => {
   //   if (contact.id.toString() === id) {
