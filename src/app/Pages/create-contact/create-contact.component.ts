@@ -43,7 +43,7 @@ export class CreateContactComponent implements OnInit {
   addContact() {
     console.log('createContact')
     console.log('this.formData', this.formData)
-    this.backend.addContact()
+    this.backend.addContact(this.formData)
       .then((data => {
         console.log('addContact()', data);
       }))
