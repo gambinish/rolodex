@@ -39,7 +39,6 @@ export class DetailPageComponent implements OnInit {
           if (`/users/${contact.id}` === this.location.path()) {
             this.contactName = contact.name.toString();
             this.contactEmail = contact.email.toString();
-
           }
         })
       })

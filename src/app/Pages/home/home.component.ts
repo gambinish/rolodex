@@ -70,4 +70,12 @@ export class HomeComponent implements OnInit {
 
   }
 
+  getDetail() {
+    console.log('getDetail')
+    this.backend.getDetail()
+      .then((data) => {
+        console.log(data)
+      })
+  }
+
 }

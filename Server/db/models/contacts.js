@@ -2,7 +2,7 @@ const bookshelf = require('./bookshelf')
 
 const Contacts = bookshelf.Model.extend({
   tableName: 'contactsTable',
-  hasTimestamps: true
+  // hasTimestamps: true
 })
 
 module.exports = Contacts
