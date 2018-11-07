@@ -22,6 +22,7 @@
   <p class='contactCard' *ngFor="let charCard of render">
     {{charCard.name}}
     <!-- {{charCard.email}} -->
+    <!-- {{charCard.id}} -->
     <br>
     <!-- <a routerLink="/users/{{charCard.id}}">DETAIL</a> -->
     <a routerLink="/users/{{charCard.id}}" (click)="getDetail()">DETAIL</a>
