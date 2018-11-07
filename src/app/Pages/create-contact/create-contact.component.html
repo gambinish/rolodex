@@ -2,20 +2,22 @@
   Please enter contact details below:
 </p>
 
+<!-- {{sanityCheck}} -->
+
 
 <div class='formWrapper'>
   <br>
   <form action='post'>
     <label for="form">Name:</label>
     <br>
-    <input type='text' className='inputClass' placeholder='enter name here'>
+    <input type='text' className='inputClass' placeholder='enter name here' name='name' [(ngModel)]='formData.name'>
     <br>
     <label for="form">Email:</label>
     <br>
-    <input type='text' className='inputClass' placeholder='enter email here'>
+    <input type='text' className='inputClass' placeholder='enter email here' name='email' [(ngModel)]='formData.email'>
     <br>
     <br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" (click)='addContact($event)'>
   </form>
   <br>
 </div>
