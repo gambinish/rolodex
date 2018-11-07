@@ -56,10 +56,11 @@ app.get('/users/:id', (req, res) => {
 })
 
 // simulate a post request to db by adding to _temp.DB array
-app.post('/users/new', (req, res) => {
+app.post('/create', (req, res) => {
 
   const item = req.body
-  console.log('SERVER POST: ', item)
+  console.log('REQ.BODY: ', req.body)
+  // console.log('SERVER POST: ', item)
 
   Contacts
     .forge(item)

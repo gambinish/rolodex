@@ -37,8 +37,13 @@ export class BackendService {
 
   }
 
-  addContact() {
-    return 'ADDING CONTACT'
+  addContact(data) {
+    // return 'ADDING CONTACT'
+    const url = `http://localhost:8000/create`
+
+    console.log(url)
+    return this.http.post(url, data).toPromise();
+
   }
 
 
